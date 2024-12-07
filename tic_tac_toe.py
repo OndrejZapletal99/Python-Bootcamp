@@ -118,8 +118,12 @@ def end_game():
         return True
     else: 
         return False
-    
-    
+def tie_game():
+    if '_' not in row1 and '_' not in row2 and '_' not in row3:
+        return True
+    else:
+        return False
+
 while game_end == False:
     game_plan(row1,row2,row3)
     # player 1 section
@@ -131,11 +135,13 @@ while game_end == False:
         column_index_1 = column_selection()
         replace_status_1 = replace_check(row_index_1,column_index_1)
     string_replace(row_index_1,column_index_1)
-    if end_game() == True:
-        player_won = 'Player 1'
+    if tie_game():
         break
     else:
-        game_end = False
+        pass
+    if end_game():
+        player_won = player
+        break
     game_plan(row1,row2,row3)
     #player 2 section
     player = 'Player 2'
@@ -146,12 +152,20 @@ while game_end == False:
         column_index_2 = column_selection()
         replace_status_2 = replace_check(row_index_2,column_index_2)
     string_replace(row_index_2,column_index_2)
-    if end_game() == True:
-        player_won = 'Player 2'
+    if tie_game():
+        break
+    else:
+        pass
+    if end_game():
+        player_won = player
         break
     else:
         game_end = False
 
 game_plan(row1,row2,row3)
-print(f'Game over, {player_won} won')
+if end_game:
+    print(f'{player_won} has won')
+elif tie_game:
+    ('It is a tie')
+    
 
