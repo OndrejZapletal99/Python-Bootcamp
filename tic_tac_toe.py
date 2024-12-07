@@ -99,25 +99,23 @@ def string_replace(row_index,column_index):
 
 
 def end_game():
-    # end game check
-    if (row1[0] == 'X' and row1[1] == 'X' and row1[2] == 'X') or (row1[0] == 'O' and row1[1] == 'O' and row1[2] == 'O'):
-        return True
-    elif (row2[0] == 'X' and row2[1] == 'X' and row2[2] == 'X') or (row2[0] == 'O' and row2[1] == 'O' and row2[2] == 'O'):
-        return True
-    elif (row3[0] == 'X' and row3[1] == 'X' and row3[2] == 'X') or (row3[0] == 'O' and row3[1] == 'O' and row3[2] == 'O'):
-        return True
-    elif (row1[0] == 'X' and row2[0] == 'X' and row3[0] == 'X') or (row1[0] == 'O' and row2[0] == 'O' and row3[0] == 'O'):
-        return True
-    elif (row1[1] == 'X' and row2[1] == 'X' and row3[1] == 'X') or (row1[1] == 'O' and row2[1] == 'O' and row3[1] == 'O'):
-        return True
-    elif (row1[2] == 'X' and row2[2] == 'X' and row3[2] == 'X') or (row1[2] == 'O' and row2[2] == 'O' and row3[2] == 'O'):
-        return True
-    elif (row1[0] == 'X' and row2[1] == 'X' and row3[2] == 'X') or (row1[0] == 'O' and row2[1] == 'O' and row3[2] == 'O'):
-        return True
-    elif (row1[2] == 'X' and row2[1] == 'X' and row3[0] == 'X') or (row1[2] == 'O' and row2[1] == 'O' and row3[0] == 'O'):
-        return True
-    else: 
-        return False
+    # End game check
+    winning_combinations = [
+        [row1[0], row1[1], row1[2]],
+        [row2[0], row2[1], row2[2]],
+        [row3[0], row3[1], row3[2]],
+        [row1[0], row2[0], row3[0]],
+        [row1[1], row2[1], row3[1]],
+        [row1[2], row2[2], row3[2]],
+        [row1[0], row2[1], row3[2]],
+        [row1[2], row2[1], row3[0]],
+    ]
+    for combo in winning_combinations:
+        if combo == ['X', 'X', 'X']:
+            return 'Player 1'  # Player 1 wins
+        elif combo == ['O', 'O', 'O']:
+            return 'Player 2'  # Player 2 wins
+    return None  # No winner
 def tie_game():
     if '_' not in row1 and '_' not in row2 and '_' not in row3:
         return True
@@ -136,14 +134,16 @@ while game_end == False:
         replace_status_1 = replace_check(row_index_1,column_index_1)
     string_replace(row_index_1,column_index_1)
     if tie_game():
+        print("It's a tie!")
         break
-    else:
-        pass
-    if end_game():
-        player_won = player
+
+    winner = end_game()
+    if winner:
+        print(f"{winner} has won!")
         break
+
     game_plan(row1,row2,row3)
-    
+
     #player 2 section
     player = 'Player 2'
     print('Player 2 Turn')
@@ -154,19 +154,15 @@ while game_end == False:
         replace_status_2 = replace_check(row_index_2,column_index_2)
     string_replace(row_index_2,column_index_2)
     if tie_game():
+        print("It's a tie!")
         break
-    else:
-        pass
-    if end_game():
-        player_won = player
+
+    winner = end_game()
+    if winner:
+        print(f"{winner} has won!")
         break
-    else:
-        game_end = False
 
 game_plan(row1,row2,row3)
-if end_game:
-    print(f'{player_won} has won')
-elif tie_game:
-    ('It is a tie')
+
     
 
