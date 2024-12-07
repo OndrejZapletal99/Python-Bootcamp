@@ -143,6 +143,7 @@ while game_end == False:
         player_won = player
         break
     game_plan(row1,row2,row3)
+    
     #player 2 section
     player = 'Player 2'
     print('Player 2 Turn')
