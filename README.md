@@ -11,3 +11,11 @@ The Complete Python Bootcamp From Zero to Hero in Python Course
 ## Second Milestone project
 
 ### WebScraping Novinky.cz
+[IPYNB file ](https://github.com/OndrejZapletal99/Python-Bootcamp/blob/main/novinky_cz_websraping.ipynb)
+
+- Please change save_folder
+
+### Find articles based on keywords
+[IPYNB file ](https://github.com/OndrejZapletal99/Python-Bootcamp/blob/main/novinky_cz_websraping.ipynb)
+
+- Please change save_folder
