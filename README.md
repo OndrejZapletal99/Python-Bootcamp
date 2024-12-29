@@ -16,6 +16,6 @@ The Complete Python Bootcamp From Zero to Hero in Python Course
 - Please change save_folder
 
 ### Find articles based on keywords
-[IPYNB file ](https://github.com/OndrejZapletal99/Python-Bootcamp/blob/main/novinky_cz_websraping.ipynb)
+[IPYNB file ](https://github.com/OndrejZapletal99/Python-Bootcamp/blob/main/find_an_article.ipynb)
 
-- Please change save_folder
+- Please change folder_path
