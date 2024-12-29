@@ -7,3 +7,7 @@ The Complete Python Bootcamp From Zero to Hero in Python Course
 ## First Milestone project
 - Tic Tac Toe
 - [.py file here](https://github.com/OndrejZapletal99/Python-Bootcamp/blob/main/tic_tac_toe.py)
+
+## Second Milestone project
+
+### WebScraping Novinky.cz
